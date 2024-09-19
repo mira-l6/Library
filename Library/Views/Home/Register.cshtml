@@ -1,0 +1,28 @@
+﻿@model Library.Models.User;
+@{
+}
+
+<form asp-action="Register" method="post">
+
+    <div>
+        <label asp-for="FirstName"></label>
+        <input asp-for="FirstName"/>
+    </div>
+    <div>
+        <label asp-for="LastName"></label>
+        <input asp-for="LastName" />
+    </div>
+    <div>
+        <label asp-for="Email"></label>
+        <input asp-for="Email" />
+    </div>
+    <div>
+        <label asp-for="Password"></label>
+        <input asp-for="Password" />
+        <span asp-validation-for="Password" class="text-danger"></span>
+    </div>
+    @Html.ValidationMessage("reg", "", new { @class = "text-danger pt-3" })
+
+    <input type="submit" name="name" value="Save" />
+
+</form>
